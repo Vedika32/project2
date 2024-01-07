@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seller's Page</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Seller's Page</h1>
+
+    <form id="productForm">
+      <label for="productName">Product Name:</label>
+      <input type="text" id="productName" required>
+      
+      <label for="sellingPrice">Selling Price:</label>
+      <input type="text" id="sellingPrice" required>
+      
+      <label for="category">Choose a Category:</label>
+      <input type="text" id="category" required>
+      
+      
+      <button type="submit">Add Product</button>
+    </form>
+
+    <table id="productTable">
+      <tr>
+        <th>Product Name</th>
+        <th>Selling Price</th>
+        <th>Category</th>
+        <th>Action</th>
+      </tr>
+    </table>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
