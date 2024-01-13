@@ -85,7 +85,7 @@
 //     addProduct();
 //   });
 
-const baseUrl = "";
+const baseUrl = "https://crudcrud.com/api/c143ff08ff714ca69840622ac9445556/wyldTest";
 let formState = {
   "productName": "",
   "category": "",
@@ -95,6 +95,43 @@ let formState = {
 
 let inventory;
 
-document.addEventListener("DOMContentLoaded",()=>{
-
+document.addEventListener("DOMContentLoaded", async () => {
+  //calling callback fn after dom content is loaded;
+  getDataFromApi_and_RenderTable();
 });
+
+async function getDataFromApi_and_RenderTable() {
+  inventory = await getDataFromApi();
+  if(!(inventory && inventory.length)){
+    inventory = [];
+  }
+  renderTableData();
+}
+async function getDataFromApi() {
+  const response = await fetch(baseUrl, {
+    method: "GET",
+    headers: {
+      'content-type': 'application/json'
+      // security purpose
+    }
+  })
+  console.log(response);
+  return response.json(); //return an array
+}
+
+function renderTableData(){
+/*
+inventory = [
+  {name: 'vedEclairs'},
+  {name:'wyldChoco'}
+]
+ */
+
+/*
+
+ */
+const tbody = document.querySelector('#productTable tbody')
+for(let i = 0; i < inventory.length; i++){
+}
+}
+
