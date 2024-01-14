@@ -132,6 +132,8 @@ inventory = [
  */
 const tbody = document.querySelector('#productTable tbody')
 for(let i = 0; i < inventory.length; i++){
+  const new_row = document.createElement('tr');
+  new_row = objectToTableRow(inventory[i]);
 }
 }
 
